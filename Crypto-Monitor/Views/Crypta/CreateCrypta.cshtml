@@ -1,0 +1,11 @@
+﻿@model CryptaPL;
+
+<form asp-action="CreateCrypta" asp-controller="Crypta">
+    <label asp-for="Name"></label>
+    <input asp-for="Name" type="text" />
+    <p>
+        <label asp-for="Cost"></label>
+        <input asp-for="Cost" type ="text" />
+    </p>
+    <input type="submit">
+</form>

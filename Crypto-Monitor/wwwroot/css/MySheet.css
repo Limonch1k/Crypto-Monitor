@@ -1,0 +1,12 @@
+﻿body {
+}
+
+.start_page_div {
+    float: left;
+    width: 25%;
+    height: 30%;
+    background-color: #ebdddd;
+    margin-left: 20px;
+    margin-top: 20%;
+    min-height: 100%;
+}

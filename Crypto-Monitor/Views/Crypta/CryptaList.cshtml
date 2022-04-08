@@ -1,0 +1,39 @@
+﻿@model List<Crypto_Monitor.DataTransferModels.CryptaPL>
+
+@if (ViewBag.Message is not null)
+{
+    <h3>ViewBag.Message</h3>
+}
+
+@if (ViewBag.Role == "admin")
+{
+    <table>
+        <tr><th>Crypta_Name</th><th>Crypta_cost</th><th>Change</th></tr>
+        @foreach (var l in Model)
+         {
+             <tr><td>@l.Name</td><td>@l.Cost</td>
+             <td><form asp-controller="Crypta" asp-action="CryptaChange">
+             <button type="submit">Change</button>
+             <input value="@l.Id" name="Id" hidden>
+             <input value="@l.Cost" name="Cost" hidden>
+             <input value="@l.Name" name="Name" hidden></form></td></tr>
+         }
+    </table>
+}else
+{
+    <table>
+        <tr><th>Crypta_Name</th><th>Crypta_cost</th><th>Buy</th></tr>
+        @foreach (var l in Model)
+         {
+             <tr><td>@l.Name</td><td>@l.Cost</td><td><form asp-controller="Crypta" asp-action="MakeOrder"><input type="submit" value="buy"><input type="hidden"></form></td></tr>
+         }
+
+    </table>
+}
+
+
+
+@if (ViewBag.Role == "admin")
+{
+    <div><form asp-action="CreateCrypta" asp-controller="Crypta" method="get"><input type="submit" value="CreateCrypta"></form></div>
+}
