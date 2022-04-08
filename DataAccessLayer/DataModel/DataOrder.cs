@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.DataModel
 {
-    public class newOrderCrypta
+    public class DataOrder
     {
-        public double Money { get; set; }
+        public int Id { get; set; }
         public int UserId { get; set; }
         public int CryptaId { get; set; }
+        public double Money { get; set; }
         public string UserName { get; set; }
         public string CryptaName { get; set; }
     }

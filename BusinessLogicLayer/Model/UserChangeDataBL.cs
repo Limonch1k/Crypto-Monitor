@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccessLayer.DataModel
+namespace BusinessLogicLayer.Model
 {
-    public class newCrypta
+    public class UserChangeDataBL
     {
-        public double Cost { get; set; }
-        public int CryptaId { get; set; }
+        public int UserId { get; set; }
         public string Name { get; set; }
+        public int Age { get; set; }
     }
 }

@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.DataModel
 {
-    public class newExpectedCost
+    public class DataExpectedCost
     {
+        public int Id { get; set; }
         public int UserId { get; set; }      
         public int CryptaId { get; set; }
         public double Cost { get; set; }

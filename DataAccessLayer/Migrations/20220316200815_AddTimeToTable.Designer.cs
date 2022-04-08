@@ -4,14 +4,16 @@ using DataAccessLayer.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DataAccessLayer.Migrations
 {
     [DbContext(typeof(CryptaContext))]
-    partial class CryptaContextModelSnapshot : ModelSnapshot
+    [Migration("20220316200815_AddTimeToTable")]
+    partial class AddTimeToTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -34,7 +36,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Cryptas");
+                    b.ToTable("Crypta");
 
                     b.HasData(
                         new
@@ -64,14 +66,14 @@ namespace DataAccessLayer.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<DateTime>("Added")
+                        .HasColumnType("datetime2");
+
                     b.Property<double>("Cost")
                         .HasColumnType("float");
 
                     b.Property<int>("CryptaId")
                         .HasColumnType("int");
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
 
                     b.Property<int>("UserId")
                         .HasColumnType("int");
@@ -82,7 +84,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("ExpectedCosts");
+                    b.ToTable("ExpectedCost");
                 });
 
             modelBuilder.Entity("DataAccessLayer.Model.Order", b =>
@@ -98,9 +100,6 @@ namespace DataAccessLayer.Migrations
                     b.Property<int>("CryptaId")
                         .HasColumnType("int");
 
-                    b.Property<double>("Money")
-                        .HasColumnType("float");
-
                     b.Property<DateTime>("OrderTime")
                         .HasColumnType("datetime2");
 
@@ -113,7 +112,7 @@ namespace DataAccessLayer.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Orders");
+                    b.ToTable("Order");
                 });
 
             modelBuilder.Entity("DataAccessLayer.Model.User", b =>
@@ -135,12 +134,9 @@ namespace DataAccessLayer.Migrations
                     b.Property<string>("Password")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Role")
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("User");
 
                     b.HasData(
                         new

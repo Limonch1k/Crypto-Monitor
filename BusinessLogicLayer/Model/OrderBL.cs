@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicLayer.Model
 {
-    public class OrderCryptaBL
+    public class OrderBL
     {
-        public string UserName { get; set; }
-        public string CryptaName { get; set; }
+        public int Id { get; set; }
+        public int UserId { get; set; }
+        public int CryptaId { get; set; }
         public double Count { get; set; }
+
+        public double Money { get; set; }
     }
 }

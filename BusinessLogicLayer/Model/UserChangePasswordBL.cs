@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace BusinessLogicLayer.Model
 {
-    public class UserExpectedCost
+    public class UserChangePasswordBL
     {
-        public string UserName { get; set; }
-
-        public List<ExpectedCostBL> ExpectedCostList {get ;set;}
+        public int UserId { get; set; }
+        public string NewPassword { get; set; }
     }
 }

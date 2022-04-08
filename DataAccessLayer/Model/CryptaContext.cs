@@ -15,20 +15,15 @@ namespace DataAccessLayer.Model
         public DbSet<Crypta> Cryptas { get; set; }
         public DbSet<ExpectedCost> ExpectedCosts { get; set; }
         public DbSet<Order> Orders { get; set; }
-
-        public CryptaContext() 
+        public CryptaContext(DbContextOptions<CryptaContext> options) : base(options)
         {
-        }   
-
-        public CryptaContext(DbContextOptions options) : base(options)
-        {
-            //Database.EnsureDeleted();
-            //Database.EnsureCreated();
+            Database.EnsureCreated();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server = (localdb)\\mssqllocaldb; Database = Cryptadb; Trusted_Connection = True;");
+            string connection = "Server=(localdb)\\mssqllocaldb;Database=Cryptadb;Trusted_Connection=True;";
+            optionsBuilder.UseSqlServer(connection);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder) 

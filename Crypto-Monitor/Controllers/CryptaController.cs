@@ -54,6 +54,7 @@ namespace Сrypto_Monitor.Controllers
         [Route("CryptaChange")]
         public IActionResult CryptaChange([FromForm]CryptaPL item)
         {
+            var i = 10;
             return View("CryptaChange");
         }
 

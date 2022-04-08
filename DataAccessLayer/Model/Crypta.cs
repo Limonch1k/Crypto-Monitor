@@ -14,7 +14,9 @@ namespace DataAccessLayer.Model
         public int Id { get; set; }
         public string Name { get; set; }
         public double Cost { get; set; } //$       
-        public List<Order> Orders { get; set; } = new List<Order>();
-        public List<ExpectedCost> ExpectedCosts { get; set; } = new List<ExpectedCost>();
+
+        public List<ExpectedCost> ExpectedCosts { get; set; }
+
+        public List<Order> Orders { get; set; }
     }
 }

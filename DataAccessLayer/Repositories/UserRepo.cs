@@ -1,4 +1,7 @@
-﻿using DataAccessLayer.Model;
+﻿using AutoMapper;
+using DataAccessLayer.DataModel;
+using DataAccessLayer.Interface;
+using DataAccessLayer.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +10,9 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Repositories
 {
-    public class UserRepo : AbstractClass<User, CryptaContext>
+    public class UserRepo : AbstractUser<DataUser>
     {
-        public UserRepo(CryptaContext context) : base(context) 
+        public UserRepo(CryptaContext context, IMapper mapper) : base(context, mapper)
         {
         }
     }

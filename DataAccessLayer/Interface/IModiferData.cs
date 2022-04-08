@@ -19,7 +19,7 @@ namespace DataAccessLayer.Interface
 
     public interface IModiferDataAsynk<T> where T : class
     {
-        Task<IEnumerable<T>> GetAll();
+        IEnumerable<T> GetAll();
         Task<T> FindById(int id);
         Task Update(int id, T item);
         Task Create(T item);
