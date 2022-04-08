@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\example\GeneralObjects\GeneralObjects.csproj" />
+    <ProjectReference Include="..\GeneralObjects\GeneralObjects.csproj" />
   </ItemGroup>
 
 </Project>

@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DataAccessLayer\DataAccessLayer.csproj" />
-    <ProjectReference Include="..\example\GeneralObjects\GeneralObjects.csproj" />
+    <ProjectReference Include="..\GeneralObjects\GeneralObjects.csproj" />
   </ItemGroup>
 
   <ItemGroup>
